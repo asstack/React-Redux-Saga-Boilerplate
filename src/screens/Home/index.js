@@ -10,11 +10,11 @@ import React, { Component } from 'react';
 // import '../../assets/css/owl.carousel.css';
 
 
-import Header from '../Header/header'
+import Header from '../Header'
 import MainGallery from '../MainGallery/mainGallery'
 import TopSliderSection from '../MainGallery/topSliderSection'
 import Content from '../content/eventIndex'
-import Footer from '../Footer/footer'
+import Footer from '../Footer'
 
 class Home extends Component {
   // constructor() {

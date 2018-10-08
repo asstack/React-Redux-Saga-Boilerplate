@@ -15,7 +15,7 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/art-boca-raton" component={Home} />
         </ConnectedRouter>
       </Provider>
     );
