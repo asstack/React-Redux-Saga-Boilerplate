@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700');
+#search { display: none; }
+.IconSearch { background: url(../images/searchBtn.png) no-repeat; background-position: center center; background-size: contain; width: 14px; height: 14px; float: right; }
+.menuIcon { background: url(../images/menuIcon.png) no-repeat; background-position: center center; background-size: contain; width: 14px; height: 10px; float: none; display: inline-block; vertical-align: middle; }
+.leftPart { width: auto; }
+.breaCrumb { width: auto; display: inline-block; vertical-align: middle; }
+.leftPart { width: 20%; float: left; }
+.navbar-brand { width: auto; height: auto; font-family: Poppins; font-size: 18px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.28; letter-spacing: -0.6px; color: #000000; padding: 0; margin: 0; }
+.divider { width: 12px; height: 46px; font-size: 26px; color: #304f4f; }
+.pageName { font-family: Poppins; font-size: 18px; font-weight: 600; font-style: normal; font-stretch: normal; line-height: 1.28; letter-spacing: -0.6px; color: #304f4f; }
+.navbar-nav .nav-link { font-family: Montserrat; font-size: 14px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: 1.64; letter-spacing: -0.5px; text-align: right; color: #808080; }
+.navbar-nav .nav-item { margin-left: 40px; }
+.navbar-expand-lg .navbar-nav .nav-link { padding-left: 0; padding-right: 0; }
+#search-wrapper { float: right; margin-left: 55px; }
+.navbar { padding: 13px 0; }
+.slideLeftNav,
+.slideRightNav { border: 1px solid #eeebeb; border-radius: 100%; color: #000; display: inline-block; font-size: 20px; height: 50px; line-height: 43px; text-align: center; vertical-align: middle; width: 50px; margin-right: 14px; }
+.divider,
+.navbar-brand,
+.pageName { display: inline-block; vertical-align: middle; }
+.breaCrumb { vertical-align: middle; }
+.menuIcon { vertical-align: middle; }
+.ticcetTxt span { font-family: Poppins; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.75; letter-spacing: normal; color: #d2d1d1; }
+.ticcetTxt span.topDarkText { color: #8e8e8e; }
+img { max-width: 100%; }
+.sliderWhiteText { font-family: Poppins; font-size: 30px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: normal; color: rgba(49, 32, 31, 0); -webkit-text-stroke: 0.2px #000000; }
+.blackTextSlide { height: 160px; font-family: 'Josefin Sans', sans-serif; font-size: 70px; font-weight: 600; font-style: normal; font-stretch: normal; line-height: 1.14; letter-spacing: normal; color: #000000; }
+.greyTextSlide { font-family: Poppins; font-size: 18px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: normal; color: #8e8e8e; }
+.btnCircleRead { width: 50px; height: 50px; border-radius: 24px; background-color: #304f4f; line-height: 50px; text-align: center; display: inline-block; color: #fff; }
+.topSliderMain { padding: 14px 0 0; }
+.bg_black { background: #000; }
+.bg_lt_grey { background-color: #1a1a1a; }
+.footer_bottom { float: left; width: 100%; }
+.Footer_main { padding: 0 0; }
+.Footer_main p.foot_heading_bold { font-family: Poppins; font-size: 48px; font-style: normal; font-stretch: normal; letter-spacing: -1.5px; color: #ffffff; line-height: 50%; margin-bottom: 30px; }
+.Footer_main p.foot_heading_normal { font-family: Poppins; font-size: 18px; font-weight: 300; font-style: normal; font-stretch: normal; letter-spacing: normal; color: #ffffff; margin-bottom: 30px; }
+.Footer_main p { color: #999999; }
+.footer_social_icons { padding-left: 0px; }
+.footer_social_icons li { margin-left: 0px; display: inline-block; list-style: none; text-align: center; }
+.footer_social_icons li.equal_style_social_icons { width: 40px; height: 40px; border-radius: 16px; background-color: rgba(255, 255, 255, 0.2); line-height: 40px; margin-right: 7px; }
+.footer_social_icons li.equal_style_social_icons a .fa { width: 16px; height: 14px; color: #999999; }
+.readText { margin-left: -14px; display: inline-block; }
+.readMoreNewBtn { font-family: 'Josefin Sans'; font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: normal; color: #333333; }
+.sliderWhiteText { margin-bottom: 10px; margin-top: 15%; }
+.blackTextSlide { margin-bottom: 20px; }
+.greyTextSlide { margin-bottom: 32px; }
+.sliderBottomText { margin: 7% 0 0; }
+.eventHeader { width: 100%; float: left; }
+.borderTopBt { border-top: 1px solid #f4f4f4; border-bottom: 1px solid #f4f4f4; }
+.sectionEvents { margin: 0 0; width: 100%; float: left; }
+.Footer_main { width: 100%; float: left; }
+.eventHeading { font-family: Poppins; font-size: 24px; font-weight: 200; font-style: normal; font-stretch: normal; line-height: 2; letter-spacing: normal; color: #999999; margin: 0; padding: 0; }
+.eventHeading span { color: #000000; padding: 0 0 0 5px; }
+.tagsEvents { margin: 0; padding: 0; list-style: none; display: inline-block; width: auto; float: right; }
+.tagsEvents li { list-style: none; margin: 0; padding: 0 0 0 14px; display: inline-block; }
+.tagsEvents li a { font-family: Poppins; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 4; letter-spacing: normal; color: #d3d3d3; text-decoration: none; }
+.tagsEvents li:hover a,
+.tagsEvents li.active a { color: #304f4f; }
+.slideBlogNavRight { float: right; }
+.slideBlogNavRight a { display: inline-block; padding: 10px; background-repeat: no-repeat; background-position: center center; background-size: calc(12px); height: 45px; width: 45px; float: left; }
+.slideBlogNavRight a.prevBlogSlide { background-image: url(../images/arrowLeft.png); }
+.slideBlogNavRight a.NextBlogSlide { background-image: url(../images/arrowRight.png); }
+.navDivider { height: 48px; background-color: #f4f4f4; width: 1px; display: inline-block; vertical-align: top; float: left; }
+.eventHeaderTop { width: 100%; float: left; }
+.eventsList { width: 100%; float: left; }
+.colBorder { border-right: 1px solid #f4f4f4; padding-top: 30px; }
+.postTags { font-family: 'Josefin Sans'; font-size: 16px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.44; letter-spacing: normal; color: #999999; }
+.postImage { font-family: Poppins; font-size: 21px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.48; letter-spacing: normal; color: #333333; }
+.dateTimePost p { font-family: Poppins; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.75; letter-spacing: normal; color: #d2d1d1; }
+.dateTimePost p strong { font-family: Poppins; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.5; letter-spacing: normal; color: #333333; font-size: 14px; }
+.postDisc p { font-family: Montserrat; font-size: 12px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: 1.83; letter-spacing: normal; color: #808080; }
+.eventsList h2 { font-family: Poppins; font-size: 21px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.48; letter-spacing: normal; color: #333333; }
+.dateTimePost p { margin-bottom: 1px; }
+.postDisc { padding: 10px 0 0; }
+.postImage { width: 100%; float: left; height: 0; padding-bottom: 60%; background-size: cover; background-position: center center; background-repeat: no-repeat; margin-bottom: 16px; }
+.events { width: 100%; height: auto; float: left; background-color: #211f1e; text-align: center; padding: 35px 10px; margin: 0 0 35px; }
+.daysTimeEve { opacity: 0.4; font-family: 'Josefin Sans'; ; font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.64; letter-spacing: normal; text-align: center; color: #ffffff; }
+.eventName { font-family: Poppins; font-size: 21px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.48; letter-spacing: normal; text-align: center; color: #ffffff; }
+.borderBtSp { width: 30px; height: 2px; background-color: #ffffff; display: inline-block; }
+.events p { font-family: Poppins; font-size: 13px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.77; letter-spacing: normal; text-align: center; color: #8e8e8e; }
+.events p.redText { font-family: Poppins; font-size: 13px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.77; letter-spacing: normal; text-align: center; color: #a5091f; }
+.buttonBuy { font-family: 'Josefin Sans'; ; font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: normal; text-align: right; color: #ffffff; }
+p .whiteTextEve { color: #fff; }
+.bordeGeyBteve { display: inline-block; width: 30px; height: 1px; opacity: 0.2; background-color: #ffffff; margin-bottom: 6px; margin-top: 10px; }
+.events p { margin-bottom: 5px; }
+.spacerBorder { width: 100%; float: left; }
+.spacerBorder .borderBtSp { margin-bottom: 10px; margin-top: 10px; }
+.bigGapTpBt { margin: 10px 0; }
+.buttonBottomBuy { margin: 25px 0 0; width: 100%; float: left; }
+.seemoreBtn { font-family: Poppins; font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 4.14; letter-spacing: normal; color: #333333; display: inline-block; }
+.seeMoreBtnCont { text-align: center; }
+.eventsList .row .colBorder:last-child { border-right: 0 }
+.eventsList { border-bottom: 1px solid #f4f4f4; }
+.eventSeeMore { width: 100%; float: left; }
+.bgRed { background-color: #ec0000; }
+.NewsSection .col-3 { padding-top: 30px; padding-bottom: 50px; }
+.bgRed .postTags { opacity: 0.6; color: #ffffff; }
+.eventsList .bgRed h2 { color: #fff; }
+.bgGolden { background-color: #e19743; }
+.bgGolden .postTags { opacity: 0.6; color: #ffffff; }
+.eventsList .bgGolden h2 { color: #fff; }
+.idNumber { font-family: 'Josefin Sans'; ; font-size: 16px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.44; letter-spacing: normal; color: #999999; width: 100%; display: inline-block; }
+.exibtEvent .daysTimeEve { color: #999999; }
+.exibtEvent .eventsList h2 { color: #000000; }
+.exibtEvent .events p { color: #8e8e8e; }
+.exibtEvent p .whiteTextEve { color: #d2d1d1; }
+.exibtEvent .buttonBuy { color: #333333; }
+.exibtEvent { background: #fbfbfb; border: solid 1px #dfdfdf; border-left: 2px solid #000; border-radius: 0 3px 3px 0; }
+.exibtEvent .borderBtSp { background-color: #000; }
+.artistName { margin: 0; padding: 0; list-style: none; }
+.artistName li { margin: 0 10px 0 0; ; padding: 0; list-style: none; display: inline-block; }
+.artistName li a { font-family: Poppins; font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 3.22; letter-spacing: normal; color: #d3d3d3; }
+.mapSection { width: 100%; float: left; }
+.mapSection img { width: 100%; }
+.contactSection h2 { font-family: Poppins; font-size: 21px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.48; letter-spacing: normal; color: #000000; }
+.borderBtContDark { width: 30px; height: 2px; background-color: #000000; display: inline-block; }
+.contSpacer { width: 100%; float: left; clear: both; }
+.contactSection p { font-family: Poppins; font-size: 13px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.77; letter-spacing: normal; color: #999999; margin: 0; }
+.contactSection p .greyfootText { color: #d2d1d1; }
+.contactSection p.colorRed { font-family: Poppins; font-size: 13px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.77; letter-spacing: normal; color: #a5091f; }
+a.buyTickets { font-family: 'Josefin Sans'; font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: normal; text-align: right; color: #333333; }
+.borderBtContGrey { width: 30px; height: 1px; background-color: #dfdfdf; display: inline-block; }
+.contactBuy { width: 100%; float: left; margin: 30px 0; }
+.contSpacer .borderBtContDark { margin: 10px 0; }
+.contSpacer .borderBtContGrey { margin: 20px 0 10px; }
+.footerTopSec { width: 100%; float: left; background-color: #000000; padding: 70px 0; }
+.footerCopyRight { width: 100%; float: left; background-color: #1a1a1a; padding: 28px 0; }
+.linkFootRt { width: 100%; float: left; text-align: right; }
+.linkFootRt a { font-family: 'Josefin Sans'; font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.64; letter-spacing: -0.5px; color: #666666; margin: 0 0 0 50px; }
+.footerCopyRight p { margin: 0; }
+.contactSection { margin-bottom: 70px; }
+.topSliderMain { margin: 0 0 60px; }
+.slideRightNav { margin-right: 0; }
+.ExhibSection .eventsList h2 { color: #000000; }
+.NewsSection .postTags { margin-top: 25px; }
+.contactSection .eventHeading { margin: 10px 0; }
+
+@media screen and (max-width: 1023px) {
+.leftPart { width: auto; }
+.slideLeftNav,
+.slideRightNav { line-height: 33px; width: 40px; height: 40px; }
+.slideLeftNav { margin-right: 5px; }
+.blackTextSlide { font-size: 50px; }
+.sliderWhiteText { font-size: 24px; }
+.eventsList h2 { font-size: 18px; }
+.idNumber { font-size: 14px; }
+}
+
+@media screen and (max-width: 1023px) {
+.navbar { padding: 13px 15px; }
+}
+.bgGoldenDark { background-color: #5f5139; }
+.bgGreyDark { background-color: #4b4c47; }
+.abpExbBg { background-color: #a13837; }
+.eventsList h2.eventName { color: #fff; }
+.abpArtistList { width: 100%; float: left; margin: 0; padding: 0; }
+.abpArtistList li { width: 100%; float: left; list-style: none; border-bottom: 1px solid #f5f5f5; padding-bottom: 10px; margin-bottom: 10px; }
+.abpArtListThumb { width: 20%; padding-bottom: 20%; float: left; margin-right: 15px; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+.artistTags { font-family: 'Josefin Sans'; ; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: normal; color: #999999; margin-bottom: 5px; }
+.abpArtistList li a { font-family: Poppins; font-size: 21px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: normal; color: #333333; }
+.abpArtistList li:last-child { border: 0; margin-bottom: 0; }
+.abpArtistName li { width: 100%; float: left; }
+.abpArtistName li a { font-family: Poppins; font-size: 18px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: 2; letter-spacing: normal; color: #000000; }
+.abpArtistName { padding-bottom: 30px; }
+
+
+.apbTagEvents li a { text-transform:uppercase;}
+.apbTagEvents li:hover a,
+.apbTagEvents li.active a { color: #a5091f; }
+
+.apbContactSec  a.buyTickets {color: #a13837;}
+.navBarApb .leftPart{ width:auto;}
+.navBarApb .navbar-collapse{float:right;}
