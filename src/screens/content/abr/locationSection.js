@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class ContactSection extends Component {
+class LocationSection extends Component {
 
     render() {
         return (
@@ -62,4 +62,4 @@ class ContactSection extends Component {
 
 
 
-export default ContactSection;
+export default LocationSection;

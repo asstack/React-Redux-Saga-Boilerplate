@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getNewsSaga } from '../../actions';
+import { getNewsSaga } from '../../../actions';
 
 
 class NewsSection extends Component {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getExhibitorsSaga } from '../../actions';
+import { getExhibitorsSaga } from '../../../actions';
 
 
-class ExhibSection extends Component {
+class ExhibitorsSection extends Component {
 
     componentDidMount() {
         this.props.getExhibitorsSaga();
@@ -95,4 +95,4 @@ const mapDispatchToProps = dispatch => ({
     }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExhibSection);
+export default connect(mapStateToProps, mapDispatchToProps)(ExhibitorsSection);

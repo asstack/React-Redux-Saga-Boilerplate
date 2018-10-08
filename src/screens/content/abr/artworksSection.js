@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getArtworksSaga } from '../../actions';
+import { getArtworksSaga } from '../../../actions';
 
 
-class ArtworkSection extends Component {
+class ArtworksSection extends Component {
 
     componentDidMount() {
         this.props.getArtworksSaga();
@@ -108,4 +108,4 @@ const mapDispatchToProps = dispatch => ({
     }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArtworkSection);
+export default connect(mapStateToProps, mapDispatchToProps)(ArtworksSection);
