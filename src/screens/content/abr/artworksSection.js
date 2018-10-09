@@ -4,10 +4,39 @@ import { connect } from 'react-redux';
 import { getArtworksSaga } from '../../../actions';
 
 
+const $ = window.$;
+
+
 class ArtworksSection extends Component {
 
     componentDidMount() {
         this.props.getArtworksSaga();
+    }
+
+    componentDidUpdate() {
+        $('.sliderArworks').trigger('destroy.owl.carousel');
+        $('.sliderArworks').find('.owl-stage-outer').children().unwrap();
+        $('.sliderArworks').removeClass("owl-center owl-loaded owl-text-select-on");
+
+        $('.sliderArworks').owlCarousel({
+            loop: true,
+            margin: 30,
+            nav: true,
+            nav: true,
+            slideBy: 4,
+            navText: ['<a class="prevSlide" href="#"></a>', '<a class="NextSlide" href="#"></a>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        });
     }
 
     render() {
@@ -24,21 +53,21 @@ class ArtworksSection extends Component {
                             </div>
                             <div className="col-lg-7">
                                 <ul className="artistName">
-                                    <li><a href="#!">Painting</a></li>
-                                    <li><a href="#!">Photography</a></li>
-                                    <li><a href="#!">Sculture</a></li>
-                                    <li><a href="#!">Prints & Multiples</a></li>
-                                    <li><a href="#!">Works on Paper</a></li>
-                                    <li><a href="#!">Film & Videos</a></li>
-                                    <li><a href="#!">Design</a></li>
+                                    <li><a href="#">Painting</a></li>
+                                    <li><a href="#">Photography</a></li>
+                                    <li><a href="#">Sculture</a></li>
+                                    <li><a href="#">Prints & Multiples</a></li>
+                                    <li><a href="#">Works on Paper</a></li>
+                                    <li><a href="#">Film & Videos</a></li>
+                                    <li><a href="#">Design</a></li>
                                 </ul>
                             </div>
                             <div className="col-md-3 text-right">
                                 <div className="slideBlogNavRight "><a className="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span className="navDivider"></span><a className="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a></div>
                                 <ul className="tagsEvents">
-                                    <li className="active"><a href="#!">Last</a></li>
-                                    <li><a href="#!">Popular</a></li>
-                                    <li><a href="#!">Old</a></li>
+                                    <li className="active"><a href="#">Last</a></li>
+                                    <li><a href="#">Popular</a></li>
+                                    <li><a href="#">Old</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -47,41 +76,25 @@ class ArtworksSection extends Component {
                 <div className="eventsList">
                     <div className="container ">
                         <div className="row justify-content-center">
-                            {
-                                artworks.map(({ title, photos, categories }, index) => {
-                                    let categories_array = [];
-                                    categories.forEach(element => {
-                                        categories_array.push(element.title);
-                                    });
-                                    return (
-                                        <div className="col-md-3 colBorder">
-                                            <div className="postImage" style={{ backgroundImage: `url(http://142.93.202.48${photos.url})` }}></div>
-                                            <div className="idNumber">{categories_array.join(', ')}</div>
-                                            <h2>{title}</h2>
-                                        </div>
-                                    )
-                                })
-                            }
-                            {/* <div className="col-md-3 colBorder">
-                                <div className="postImage" style={{ backgroundImage: "url(../../assets/images/artWorkImg1.png)" }}></div>
-                                <div className="idNumber">Painting</div>
-                                <h2>Red Grooms</h2>
-                            </div>
-                            <div className="col-md-3 colBorder">
-                                <div className="postImage" style={{ backgroundImage: "url(../../assets/images/artWorkImg2.png)" }}></div>
-                                <div className="idNumber">Prints & Multiples</div>
-                                <h2>Ricardo Cardenas</h2>
-                            </div>
-                            <div className="col-md-3 colBorder">
-                                <div className="postImage" style={{ backgroundImage: "url(../../assets/images/artWorkImg3.png)" }}></div>
-                                <div className="idNumber">Film & Videos</div>
-                                <h2>Richard Jolley</h2>
-                            </div>
-                            <div className="col-md-3 colBorder">
-                                <div className="postImage" style={{ backgroundImage: "url(../../assets/images/artWorkImg4.png)" }}></div>
-                                <div className="idNumber">Design</div>
-                                <h2>Rodolphe Hammadi</h2>
-                            </div> */}
+                            <ul className="owl-carousel owlReset  sliderArworks">
+                                {
+                                    artworks.map(({ title, photos, categories }, index) => {
+                                        let categories_array = [];
+                                        categories.forEach(element => {
+                                            categories_array.push(element.title);
+                                        });
+                                        return (
+                                            <li key={index}>
+                                                <div className="col-md-3 colBorder">
+                                                    <div className="postImage" style={{ backgroundImage: `url(http://142.93.202.48${photos.url})` }}></div>
+                                                    <div className="idNumber">{categories_array.join(', ')}</div>
+                                                    <h2>{title}</h2>
+                                                </div>
+                                            </li>
+                                        )
+                                    })
+                                }
+                            </ul>
                         </div>
                     </div>
                 </div>

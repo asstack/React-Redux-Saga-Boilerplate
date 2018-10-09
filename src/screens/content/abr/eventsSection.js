@@ -26,11 +26,14 @@ class EventsSection extends Component {
         this.props.getEventsSaga();
     }
 
-    initEventSlider = () => {
+    componentDidUpdate() {
+        $('.AbrEventSlider').trigger('destroy.owl.carousel');
+        $('.AbrEventSlider').find('.owl-stage-outer').children().unwrap();
+        $('.AbrEventSlider').removeClass("owl-center owl-loaded owl-text-select-on");
+
         $('.AbrEventSlider').owlCarousel({
             loop: true,
             margin: 0,
-            nav: true,
             nav: true,
             slideBy: 3,
             navText: ['<a class="prevSlide" href="#"></a>', '<a class="NextSlide" href="#"></a>'],
@@ -48,39 +51,12 @@ class EventsSection extends Component {
         });
     }
 
-    renderEventSlider = (events) => {
-        return (
-            <ul className="owl-carousel owlReset AbrEventSlider">
-                {
-                    events.map(({ title, description, photos }, index) => {
-                        return (
-                            <li key={index}>
-                                <div className="col-md-3 colBorder">
-                                    <h3 className="postTags">Work</h3>
-                                    <div className="postImage" style={{ backgroundImage: `url(http://142.93.202.48${photos.url})` }}></div>
-                                    <h2>{title}</h2>
-                                    <div className="dateTimePost">
-                                        <p>Date & Time</p>
-                                        <p><strong>15-18 March  2019, 2-3 pm</strong></p>
-                                    </div>
-                                    <div className="postDisc">
-                                        <p>{description}</p>
-                                    </div>
-                                </div>
-                            </li>
-                        )
-                    })
-                }
-            </ul>
-        )
-    }
-
     render() {
         const { events } = this.props;
         const { artists } = this.state;
         console.log('events artists', artists);
         return (
-            <div className="sectionEvents">
+            <div className="sectionEvents" >
                 <div className="eventHeaderTop borderTopBt">
                     <div className="container ">
                         <div className="row justify-content-center">
@@ -105,7 +81,7 @@ class EventsSection extends Component {
                         <div className="row justify-content-center">
                             <div className="col-md-9">
                                 <ul className="owl-carousel owlReset AbrEventSlider">
-                                    {/* {
+                                    {
                                         events.map(({ title, description, photos }, index) => (
                                             <li key={index}>
                                                 <div className="col-md-3 colBorder">
@@ -122,21 +98,7 @@ class EventsSection extends Component {
                                                 </div>
                                             </li>
                                         ))
-                                    } */}
-                                    <li>
-                                        <div className="col-md-3 colBorder">
-                                            <h3 className="postTags">Work</h3>
-                                            <div className="postImage" style={{ backgroundImage: `url(http://142.93.202.48${'photos.url'})` }}></div>
-                                            <h2>{'title'}</h2>
-                                            <div className="dateTimePost">
-                                                <p>Date & Time</p>
-                                                <p><strong>15-18 March  2019, 2-3 pm</strong></p>
-                                            </div>
-                                            <div className="postDisc">
-                                                <p>{'description'}</p>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    }
                                 </ul>
                             </div>
                             <div className="col-md-3 colBorder">

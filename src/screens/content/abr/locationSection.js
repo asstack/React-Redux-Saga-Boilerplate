@@ -32,10 +32,10 @@ class LocationSection extends Component {
                                 <div className="contSpacer"><span className="borderBtContGrey"></span></div>
                                 <p>Vernissage admission by separate ticket</p>
                                 <p className="colorRed">$50 per person</p>
-                                <div className="contactBuy"><a href="#!" className="buyTickets">Buy Tickets</a></div>
+                                <div className="contactBuy"><a href="#" className="buyTickets">Buy Tickets</a></div>
                             </div>
                             <div className=" col-md-6 colBorder">
-                                <div className="mapSection"> <img src="../../assets/images/mapImg.png" alt="map" /></div>
+                                <div className="mapSection"> <img src="../assets/images/mapImg.png" alt="map" /></div>
                             </div>
                             <div className="col-md-3 colBorder">
                                 <div className="idNumber">Location</div>
@@ -48,14 +48,13 @@ class LocationSection extends Component {
                                     right turn on  FAU Blvd. </p>
                                 <div className="contSpacer"><span className="borderBtContGrey"></span></div>
                                 <p>At Research Park on the grounds of Florida Atlantic
-            University. Complimentary parking.</p>
-                                <div className="contactBuy"><a href="#!" className="buyTickets">Get Directions</a></div>
+                      University. Complimentary parking.</p>
+                                <div className="contactBuy"><a href="#" className="buyTickets">Get Directions</a></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         );
     }
 }
