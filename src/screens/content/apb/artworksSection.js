@@ -43,19 +43,19 @@ class ArtworksSection extends Component {
         const { artworks } = this.props;
         return (
             <div className="sectionEvents artWorkSection">
-                <div class="eventHeaderTop borderTopBt">
-                    <div class="container ">
-                        <div class="row justify-content-center">
-                            <div class=" col-md-2">
-                                <div class="eventHeader">
-                                    <h2 class="eventHeading">APB<span>Arworks</span></h2>
+                <div className="eventHeaderTop borderTopBt">
+                    <div className="container ">
+                        <div className="row justify-content-center">
+                            <div className=" col-md-2">
+                                <div className="eventHeader">
+                                    <h2 className="eventHeading">APB<span>Arworks</span></h2>
                                 </div>
                             </div>
-                            <div class="col-lg-7"> </div>
-                            <div class="col-md-3 text-right">
-                                <div class="slideBlogNavRight "><a class="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span class="navDivider"></span><a class="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a> </div>
-                                <ul class="tagsEvents apbTagEvents">
-                                    <li class="active"><a href="#">Last</a></li>
+                            <div className="col-lg-7"> </div>
+                            <div className="col-md-3 text-right">
+                                <div className="slideBlogNavRight "><a className="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span className="navDivider"></span><a className="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a> </div>
+                                <ul className="tagsEvents apbTagEvents">
+                                    <li className="active"><a href="#">Last</a></li>
                                     <li><a href="#">Popular</a></li>
                                     <li><a href="#">Old</a></li>
                                 </ul>
@@ -66,8 +66,8 @@ class ArtworksSection extends Component {
                 <div className="eventsList">
                     <div className="container ">
                         <div className="row justify-content-center">
-                            <div class="col-md-3 colBorder">
-                                <ul class="artistName abpArtistName">
+                            <div className="col-md-3 colBorder">
+                                <ul className="artistName abpArtistName">
                                     <li><a href="#">Painting</a></li>
                                     <li><a href="#">Photography</a></li>
                                     <li><a href="#">Sculture</a></li>
@@ -77,8 +77,8 @@ class ArtworksSection extends Component {
                                     <li><a href="#">Design</a></li>
                                 </ul>
                             </div>
-                            <div class="col-md-9">
-                                <ul class="owl-carousel owlReset artWorkThreeSlide">
+                            <div className="col-md-9">
+                                <ul className="owl-carousel owlReset artWorkThreeSlide">
                                     {
                                         artworks.map(({ title, photos, categories }, index) => {
                                             let categories_array = [];
@@ -101,10 +101,10 @@ class ArtworksSection extends Component {
                         </div>
                     </div>
                 </div>
-                <div class="eventSeeMore">
-                    <div class="container ">
-                        <div class="row justify-content-center">
-                            <div class=" col-lg-12 seeMoreBtnCont"> <a href="#" class="seemoreBtn">See All</a> </div>
+                <div className="eventSeeMore">
+                    <div className="container ">
+                        <div className="row justify-content-center">
+                            <div className=" col-lg-12 seeMoreBtnCont"> <a href="#" className="seemoreBtn">See All</a> </div>
                         </div>
                     </div>
                 </div>
