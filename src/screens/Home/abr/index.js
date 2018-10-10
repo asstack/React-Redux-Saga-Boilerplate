@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Header from '../../Header/abr'
-import MainGallery from '../../MainGallery/abr'
-import Content from '../../content/abr/eventsIndex'
+import Main from './main'
+import NewsIndex from '../../content/abr/news/newsIndex'
 import Footer from '../../Footer/abr'
 
 class Home extends Component {
 
   render() {
     return (
-      [
-        <Header key={1} />,
-        <MainGallery key={2} />,
-        <Content key={3} />,
-        <Footer key={4} />
-      ]
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path='/art-boca-raton' component={Main} />
+          <Route exact path='/art-boca-raton/news' component={NewsIndex} />
+        </Switch>
+        <Footer />
+      </div>
     );
   }
 }

@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getNewsSaga } from '../../../actions';
+import { getExhibitorsSaga } from '../../../../actions';
 
 
 const $ = window.$;
 
 
-class NewsSection extends Component {
+class ExhibitorsSection extends Component {
 
     componentDidMount() {
-        this.props.getNewsSaga();
+        this.props.getExhibitorsSaga();
     }
 
     componentDidUpdate() {
-        $('.sliderNews').trigger('destroy.owl.carousel');
-        $('.sliderNews').find('.owl-stage-outer').children().unwrap();
-        $('.sliderNews').removeClass("owl-center owl-loaded owl-text-select-on");
+        $('.ExhibSlider').trigger('destroy.owl.carousel');
+        $('.ExhibSlider').find('.owl-stage-outer').children().unwrap();
+        $('.ExhibSlider').removeClass("owl-center owl-loaded owl-text-select-on");
 
-        $('.sliderNews').owlCarousel({
+        $('.ExhibSlider').owlCarousel({
             loop: true,
-            margin: 30,
+            margin: 0,
             nav: true,
             nav: true,
-            slideBy: 4,
+            slideBy: 3,
             navText: ['<a class="prevSlide" href="#"></a>', '<a class="NextSlide" href="#"></a>'],
             responsive: {
                 0: {
@@ -33,22 +33,22 @@ class NewsSection extends Component {
                     items: 3
                 },
                 1000: {
-                    items: 4
+                    items: 3
                 }
             }
         });
     }
 
     render() {
-        const { news } = this.props;
+        const { exhibitors } = this.props;
         return (
-            <div className="sectionEvents NewsSection">
+            <div className="sectionEvents ExhibSection">
                 <div className="eventHeaderTop borderTopBt">
                     <div className="container ">
                         <div className="row justify-content-center">
                             <div className=" col-md-6">
                                 <div className="eventHeader">
-                                    <h2 className="eventHeading">ABR<span>News</span></h2>
+                                    <h2 className="eventHeading">ABR<span>Exhibitors</span></h2>
                                 </div>
                             </div>
                             <div className=" col-md-6 text-right">
@@ -63,28 +63,32 @@ class NewsSection extends Component {
                     </div>
                 </div>
                 <div className="eventsList">
-                    <div className="container">
+                    <div className="container ">
                         <div className="row justify-content-center">
-                            <div className="col-md-12">
-                                <ul className="owl-carousel owlReset sliderNews">
+                            <div className="col-md-9">
+                                <ul className="owl-carousel owlReset ExhibSlider">
                                     {
-                                        news.map(({ title, photos, categories }, index) => {
-                                            let categories_array = [];
-                                            categories.forEach(element => {
-                                                categories_array.push(element.title);
-                                            });
-                                            return (
-                                                <li key={index}>
-                                                    <div className={`col-md-3 ${index === 1 ? 'bgRed' : index === 3 && 'bgGolden'}`} key={index}>
-                                                        <h3 className="postTags">{categories_array.join(', ')}</h3>
-                                                        <div className="postImage" style={{ backgroundImage: `url(${ photos && `http://142.93.202.48${photos.url})`}` }}></div>
-                                                        <h2>{title}</h2>
-                                                    </div>
-                                                </li>
-                                            )
-                                        })
+                                        exhibitors.map(({ title, location, photos }, index) => (
+                                            <li key={index}>
+                                                <div className="col-md-3 colBorder">
+                                                    <div className="postImage" style={{ backgroundImage: `url(http://142.93.202.48${photos.url})` }}></div>
+                                                    <h2>{title}</h2>
+                                                    <div className="idNumber">{location}</div>
+                                                </div>
+                                            </li>
+                                        ))
                                     }
                                 </ul>
+                            </div>
+                            <div className="col-md-3 colBorder">
+                                <div className="events exibtEvent">
+                                    <div className="daysTimeEve">Art Boca Raton</div>
+                                    <h2 className="eventName">Exibitors Call</h2>
+                                    <div className="spacerBorder"><span className="borderBtSp"></span></div>
+                                    <p><span className="whiteTextEve">Thursday</span><br />
+                                        March 14 – 6 PM – 8 PM</p>
+                                    <div className="buttonBottomBuy"><a href="#" className="buttonBuy">To Exibit</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -102,12 +106,13 @@ class NewsSection extends Component {
 }
 
 const mapStateToProps = state => ({
-    news: state.newsReducer.news
+    exhibitors: state.exhibitorsReducer.exhibitors
 });
 
 const mapDispatchToProps = dispatch => ({
-    getNewsSaga: () =>
-        dispatch(getNewsSaga())
-});
+    getExhibitorsSaga: () => {
+        dispatch(getExhibitorsSaga())
+    }
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewsSection);
+export default connect(mapStateToProps, mapDispatchToProps)(ExhibitorsSection);

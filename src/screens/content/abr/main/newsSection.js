@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getArtistsSaga } from '../../../actions';
+import { getNewsSaga } from '../../../../actions';
 
 
 const $ = window.$;
 
 
-class ArtistsSection extends Component {
+class NewsSection extends Component {
 
     componentDidMount() {
-        this.props.getArtistsSaga();
+        this.props.getNewsSaga();
     }
 
     componentDidUpdate() {
-        $('.sliderArtists').trigger('destroy.owl.carousel');
-        $('.sliderArtists').find('.owl-stage-outer').children().unwrap();
-        $('.sliderArtists').removeClass("owl-center owl-loaded owl-text-select-on");
+        $('.sliderNews').trigger('destroy.owl.carousel');
+        $('.sliderNews').find('.owl-stage-outer').children().unwrap();
+        $('.sliderNews').removeClass("owl-center owl-loaded owl-text-select-on");
 
-        $('.sliderArtists').owlCarousel({
+        $('.sliderNews').owlCarousel({
             loop: true,
             margin: 30,
             nav: true,
@@ -40,28 +40,18 @@ class ArtistsSection extends Component {
     }
 
     render() {
-        const { artists } = this.props;
+        const { news } = this.props;
         return (
-            <div className="sectionEvents artistSection">
+            <div className="sectionEvents NewsSection">
                 <div className="eventHeaderTop borderTopBt">
                     <div className="container ">
                         <div className="row justify-content-center">
-                            <div className=" col-md-2">
+                            <div className=" col-md-6">
                                 <div className="eventHeader">
-                                    <h2 className="eventHeading">ABR<span>Artists</span></h2>
+                                    <h2 className="eventHeading">ABR<span>News</span></h2>
                                 </div>
                             </div>
-                            <div className="col-lg-7">
-                                <ul className="artistName">
-                                    <li><a href="#">Adriana Dorta</a></li>
-                                    <li><a href="#">Alex Katz</a></li>
-                                    <li><a href="#">Alexi Torres</a></li>
-                                    <li><a href="#">Amir Genislaw</a></li>
-                                    <li><a href="#">Alexi Torres</a></li>
-                                    <li><a href="#">Andrea Salvador</a></li>
-                                </ul>
-                            </div>
-                            <div className="col-md-3 text-right">
+                            <div className=" col-md-6 text-right">
                                 <div className="slideBlogNavRight "><a className="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span className="navDivider"></span><a className="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a></div>
                                 <ul className="tagsEvents">
                                     <li className="active"><a href="#">Last</a></li>
@@ -73,22 +63,22 @@ class ArtistsSection extends Component {
                     </div>
                 </div>
                 <div className="eventsList">
-                    <div className="container ">
+                    <div className="container">
                         <div className="row justify-content-center">
                             <div className="col-md-12">
-                                <ul className="owl-carousel owlReset sliderArtists">
+                                <ul className="owl-carousel owlReset sliderNews">
                                     {
-                                        artists.map(({ firstname, lastname, categories, biophoto }, index) => {
+                                        news.map(({ title, photos, categories }, index) => {
                                             let categories_array = [];
                                             categories.forEach(element => {
                                                 categories_array.push(element.title);
                                             });
                                             return (
                                                 <li key={index}>
-                                                    <div className="col-md-3 colBorder">
-                                                        <div className="postImage" style={{ backgroundImage: `url(http://142.93.202.48${biophoto.url})` }}></div>
-                                                        <div className="idNumber">{categories_array.join(', ')}</div>
-                                                        <h2>{`${firstname} ${lastname}`}</h2>
+                                                    <div className={`col-md-3 ${index === 1 ? 'bgRed' : index === 3 && 'bgGolden'}`} key={index}>
+                                                        <h3 className="postTags">{categories_array.join(', ')}</h3>
+                                                        <div className="postImage" style={{ backgroundImage: `url(${ photos && `http://142.93.202.48${photos.url})`}` }}></div>
+                                                        <h2>{title}</h2>
                                                     </div>
                                                 </li>
                                             )
@@ -111,15 +101,13 @@ class ArtistsSection extends Component {
     }
 }
 
-
 const mapStateToProps = state => ({
-    artists: state.artistsReducer.artists
+    news: state.newsReducer.news
 });
 
 const mapDispatchToProps = dispatch => ({
-    getArtistsSaga: () => {
-        dispatch(getArtistsSaga())
-    }
-})
+    getNewsSaga: () =>
+        dispatch(getNewsSaga())
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArtistsSection);
+export default connect(mapStateToProps, mapDispatchToProps)(NewsSection);

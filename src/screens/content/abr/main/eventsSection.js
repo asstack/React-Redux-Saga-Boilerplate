@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getEventsSaga } from '../../../actions';
-import store from '../../../store';
-import { TAG_ABR } from '../../../appConstants';
+import { getEventsSaga } from '../../../../actions';
+import store from '../../../../store';
+import { TAG_ABR } from '../../../../appConstants';
 
 
 const $ = window.$;

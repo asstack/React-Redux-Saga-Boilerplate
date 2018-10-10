@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getExhibitorsSaga } from '../../../actions';
+import { getArtworksSaga } from '../../../../actions';
 
 
 const $ = window.$;
 
 
-class ExhibitorsSection extends Component {
+class ArtworksSection extends Component {
 
     componentDidMount() {
-        this.props.getExhibitorsSaga();
+        this.props.getArtworksSaga();
     }
 
     componentDidUpdate() {
-        $('.ExhibSlider').trigger('destroy.owl.carousel');
-        $('.ExhibSlider').find('.owl-stage-outer').children().unwrap();
-        $('.ExhibSlider').removeClass("owl-center owl-loaded owl-text-select-on");
+        $('.sliderArworks').trigger('destroy.owl.carousel');
+        $('.sliderArworks').find('.owl-stage-outer').children().unwrap();
+        $('.sliderArworks').removeClass("owl-center owl-loaded owl-text-select-on");
 
-        $('.ExhibSlider').owlCarousel({
+        $('.sliderArworks').owlCarousel({
             loop: true,
-            margin: 0,
+            margin: 30,
             nav: true,
             nav: true,
-            slideBy: 3,
+            slideBy: 4,
             navText: ['<a class="prevSlide" href="#"></a>', '<a class="NextSlide" href="#"></a>'],
             responsive: {
                 0: {
@@ -33,25 +33,36 @@ class ExhibitorsSection extends Component {
                     items: 3
                 },
                 1000: {
-                    items: 3
+                    items: 4
                 }
             }
         });
     }
 
     render() {
-        const { exhibitors } = this.props;
+        const { artworks } = this.props;
         return (
-            <div className="sectionEvents ExhibSection">
+            <div className="sectionEvents artWorkSection">
                 <div className="eventHeaderTop borderTopBt">
                     <div className="container ">
                         <div className="row justify-content-center">
-                            <div className=" col-md-6">
+                            <div className=" col-md-2">
                                 <div className="eventHeader">
-                                    <h2 className="eventHeading">ABR<span>Exhibitors</span></h2>
+                                    <h2 className="eventHeading">ABR<span>Artworks</span></h2>
                                 </div>
                             </div>
-                            <div className=" col-md-6 text-right">
+                            <div className="col-lg-7">
+                                <ul className="artistName">
+                                    <li><a href="#">Painting</a></li>
+                                    <li><a href="#">Photography</a></li>
+                                    <li><a href="#">Sculture</a></li>
+                                    <li><a href="#">Prints & Multiples</a></li>
+                                    <li><a href="#">Works on Paper</a></li>
+                                    <li><a href="#">Film & Videos</a></li>
+                                    <li><a href="#">Design</a></li>
+                                </ul>
+                            </div>
+                            <div className="col-md-3 text-right">
                                 <div className="slideBlogNavRight "><a className="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span className="navDivider"></span><a className="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a></div>
                                 <ul className="tagsEvents">
                                     <li className="active"><a href="#">Last</a></li>
@@ -65,38 +76,32 @@ class ExhibitorsSection extends Component {
                 <div className="eventsList">
                     <div className="container ">
                         <div className="row justify-content-center">
-                            <div className="col-md-9">
-                                <ul className="owl-carousel owlReset ExhibSlider">
-                                    {
-                                        exhibitors.map(({ title, location, photos }, index) => (
+                            <ul className="owl-carousel owlReset  sliderArworks">
+                                {
+                                    artworks.map(({ title, photos, categories }, index) => {
+                                        let categories_array = [];
+                                        categories.forEach(element => {
+                                            categories_array.push(element.title);
+                                        });
+                                        return (
                                             <li key={index}>
                                                 <div className="col-md-3 colBorder">
                                                     <div className="postImage" style={{ backgroundImage: `url(http://142.93.202.48${photos.url})` }}></div>
+                                                    <div className="idNumber">{categories_array.join(', ')}</div>
                                                     <h2>{title}</h2>
-                                                    <div className="idNumber">{location}</div>
                                                 </div>
                                             </li>
-                                        ))
-                                    }
-                                </ul>
-                            </div>
-                            <div className="col-md-3 colBorder">
-                                <div className="events exibtEvent">
-                                    <div className="daysTimeEve">Art Boca Raton</div>
-                                    <h2 className="eventName">Exibitors Call</h2>
-                                    <div className="spacerBorder"><span className="borderBtSp"></span></div>
-                                    <p><span className="whiteTextEve">Thursday</span><br />
-                                        March 14 – 6 PM – 8 PM</p>
-                                    <div className="buttonBottomBuy"><a href="#" className="buttonBuy">To Exibit</a></div>
-                                </div>
-                            </div>
+                                        )
+                                    })
+                                }
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div className="eventSeeMore">
                     <div className="container ">
                         <div className="row justify-content-center">
-                            <div className=" col-lg-12 seeMoreBtnCont"> <a href="#" className="seemoreBtn">See All</a> </div>
+                            <div className=" col-lg-12 seeMoreBtnCont"> <a href="#!" className="seemoreBtn">See All</a> </div>
                         </div>
                     </div>
                 </div>
@@ -105,14 +110,15 @@ class ExhibitorsSection extends Component {
     }
 }
 
+
 const mapStateToProps = state => ({
-    exhibitors: state.exhibitorsReducer.exhibitors
+    artworks: state.artworksReducer.artworks
 });
 
 const mapDispatchToProps = dispatch => ({
-    getExhibitorsSaga: () => {
-        dispatch(getExhibitorsSaga())
+    getArtworksSaga: () => {
+        dispatch(getArtworksSaga())
     }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExhibitorsSection);
+export default connect(mapStateToProps, mapDispatchToProps)(ArtworksSection);
