@@ -20,10 +20,10 @@ class ArtistsSection extends Component {
 
         $('.sliderArtistsThreeCol').owlCarousel({
             loop: true,
-            margin: 30,
+            margin: 0,
             nav: true,
             nav: true,
-            slideBy: 4,
+            slideBy: 3,
             navText: ['<a class="prevSlide" href="#"></a>', '<a class="NextSlide" href="#"></a>'],
             responsive: {
                 0: {
@@ -33,7 +33,7 @@ class ArtistsSection extends Component {
                     items: 3
                 },
                 1000: {
-                    items: 4
+                    items: 3
                 }
             }
         });
@@ -43,19 +43,19 @@ class ArtistsSection extends Component {
         const { artists } = this.props;
         return (
             <div className="sectionEvents artistSection">
-                <div class="eventHeaderTop borderTopBt">
-                    <div class="container ">
-                        <div class="row justify-content-center">
-                            <div class=" col-md-2">
-                                <div class="eventHeader">
-                                    <h2 class="eventHeading">APB<span>Artists</span></h2>
+                <div className="eventHeaderTop borderTopBt">
+                    <div className="container ">
+                        <div className="row justify-content-center">
+                            <div className=" col-md-2">
+                                <div className="eventHeader">
+                                    <h2 className="eventHeading">APB<span>Artists</span></h2>
                                 </div>
                             </div>
-                            <div class="col-lg-7"> </div>
-                            <div class="col-md-3 text-right">
-                                <div class="slideBlogNavRight "><a class="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span class="navDivider"></span><a class="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a> </div>
-                                <ul class="tagsEvents apbTagEvents">
-                                    <li class="active"><a href="#">Last</a></li>
+                            <div className="col-lg-7"> </div>
+                            <div className="col-md-3 text-right">
+                                <div className="slideBlogNavRight "><a className="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span className="navDivider"></span><a className="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a> </div>
+                                <ul className="tagsEvents apbTagEvents">
+                                    <li className="active"><a href="#">Last</a></li>
                                     <li><a href="#">Popular</a></li>
                                     <li><a href="#">Old</a></li>
                                 </ul>
@@ -63,48 +63,62 @@ class ArtistsSection extends Component {
                         </div>
                     </div>
                 </div>
-                <div class="eventsList">
-                    <div class="container ">
-                        <div class="row justify-content-center">
-                            <div class="col-md-3 colBorder">
-                                <ul class="abpArtistList">
+                <div className="eventsList">
+                    <div className="container ">
+                        <div className="row justify-content-center">
+                            <div className="col-md-3 colBorder">
+                                <ul className="abpArtistList">
                                     <li>
-                                        <div class="abpArtListThumb" style={{ backgroundImage: `url(../assets/images/abpArtistImgthumb1.png)` }}></div>
-                                        <div class="artistTags">Abstract</div>
+                                        <div className="abpArtListThumb" style={{ backgroundImage: `url(../assets/images/abpArtistImgthumb1.png)` }}></div>
+                                        <div className="artistTags">Abstract</div>
                                         <a href="#">Khawam Gallery</a></li>
                                     <li>
-                                        <div class="abpArtListThumb" style={{ backgroundImage: `url(../assets/images/abpArtistImgthumb2.png)` }}></div>
-                                        <div class="artistTags">Abstract</div>
+                                        <div className="abpArtListThumb" style={{ backgroundImage: `url(../assets/images/abpArtistImgthumb2.png)` }}></div>
+                                        <div className="artistTags">Abstract</div>
                                         <a href="#">Kattegat Gallery</a></li>
                                     <li>
-                                        <div class="abpArtListThumb" style={{ backgroundImage: `url(../assets/images/abpArtistImgthumb3.png)` }}></div>
-                                        <div class="artistTags">Abstract</div>
+                                        <div className="abpArtListThumb" style={{ backgroundImage: `url(../assets/images/abpArtistImgthumb3.png)` }}></div>
+                                        <div className="artistTags">Abstract</div>
                                         <a href="#">Khankhalaev Gallery</a></li>
                                     <li>
-                                        <div class="abpArtListThumb" style={{ backgroundImage: `url(../assets/images/abpArtistImgthumb4.png)` }}></div>
-                                        <div class="artistTags">Abstract</div>
+                                        <div className="abpArtListThumb" style={{ backgroundImage: `url(../assets/images/abpArtistImgthumb4.png)` }}></div>
+                                        <div className="artistTags">Abstract</div>
                                         <a href="#">Kendall Art Center</a></li>
                                 </ul>
                             </div>
-                            <div class="col-md-9">
-                                <ul class="owl-carousel owlReset sliderArtistsThreeCol">
-                                    {
-                                        artists.map(({ firstname, lastname, categories, biophoto }, index) => {
-                                            let categories_array = [];
-                                            categories.forEach(element => {
-                                                categories_array.push(element.title);
-                                            });
-                                            return (
-                                                <li key={index}>
-                                                    <div className="col-md-3 colBorder">
-                                                        <div className="postImage" style={{ backgroundImage: `url(http://142.93.202.48${biophoto.url})` }}></div>
-                                                        <div className="idNumber">{categories_array.join(', ')}</div>
-                                                        <h2>{`${firstname} ${lastname}`}</h2>
-                                                    </div>
-                                                </li>
-                                            )
-                                        })
-                                    }
+                            <div className="col-md-9">
+                                <ul className="owl-carousel owlReset sliderArtistsThreeCol">
+                                    <li><div className="col-md-3 colBorder">
+                                        <div className="postImage" style={{ backgroundImage: `url(../assets/images/abpArtistImg1.png)` }}></div>
+                                        <div className="idNumber">Design, Insights</div>
+                                        <h2>Alberto La Tassa</h2>
+                                    </div></li>
+                                    <li><div className="col-md-3 colBorder">
+                                        <div className="postImage" style={{ backgroundImage: `url(../assets/images/abpArtistImg2.png)` }}></div>
+                                        <div className="idNumber">Abstract</div>
+                                        <h2>Alejandra Aristizabal</h2>
+                                    </div></li>
+                                    <li><div className="col-md-3 colBorder">
+                                        <div className="postImage" style={{ backgroundImage: `url(../assets/images/abpArtistImg3.png)` }}></div>
+                                        <div className="idNumber">Alejandra Aristizabal</div>
+                                        <h2>Alessandra Maria</h2>
+                                    </div></li>
+
+                                    <li><div className="col-md-3 colBorder">
+                                        <div className="postImage" style={{ backgroundImage: `url(../assets/images/abpArtistImg1.png)` }}></div>
+                                        <div className="idNumber">Design, Insights</div>
+                                        <h2>Alberto La Tassa</h2>
+                                    </div></li>
+                                    <li><div className="col-md-3 colBorder">
+                                        <div className="postImage" style={{ backgroundImage: `url(../assets/images/abpArtistImg2.png)` }}></div>
+                                        <div className="idNumber">Abstract</div>
+                                        <h2>Alejandra Aristizabal</h2>
+                                    </div></li>
+                                    <li><div className="col-md-3 colBorder">
+                                        <div className="postImage" style={{ backgroundImage: `url(../assets/images/abpArtistImg3.png)` }}></div>
+                                        <div className="idNumber">Alejandra Aristizabal</div>
+                                        <h2>Alessandra Maria</h2>
+                                    </div></li>
                                 </ul>
                             </div>
                         </div>

@@ -11,12 +11,12 @@ class ReviewsSection extends Component {
                         <div className="row justify-content-center">
                             <div className=" col-md-2">
                                 <div className="eventHeader">
-                                    <h2 className="eventHeading">ABR<span>Reviews</span></h2>
+                                    <h2 className="eventHeading">APB<span>Reviews</span></h2>
                                 </div>
                             </div>
                             <div className="col-10 col-lg-10 text-right">
-                                <div className="slideBlogNavRight "><a className="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span className="navDivider"></span><a className="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a></div>
-                                <ul className="tagsEvents">
+                                <div className="slideBlogNavRight "><a className="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span className="navDivider"></span><a className="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a> </div>
+                                <ul className="tagsEvents apbTagEvents">
                                     <li className="active"><a href="#">Last</a></li>
                                     <li><a href="#">Popular</a></li>
                                     <li><a href="#">Old</a></li>
@@ -28,50 +28,49 @@ class ReviewsSection extends Component {
                 <div className="eventsList">
                     <div className="container ">
                         <div className="row justify-content-center">
-                            <div className="col-md-12">
-                                <ul className="owl-carousel owlReset  sliderReviews">
-                                    <div className="col-md-3 colBorder">
-                                        <div className="postImage" style={{ backgroundImage: "url(../assets/images/reviewImg1.png)" }}></div>
-                                        <h2>Sculptor Christian Lapie: Beauty from Charred Ashes</h2>
-                                        <div className="idNumber">Kanye West Wants to Teach Art Courses in Chicago</div>
-                                    </div>
-                                    <div className="col-md-3 colBorder">
-                                        <div className="postImage" style={{ backgroundImage: "url(../assets/images/reviewImg2.png)" }}></div>
-                                        <h2>Artist Humberto Castro: Master of Transformation</h2>
-                                        <div className="idNumber">Two New Art Festivals Boost the American Midwest's Culture Quotient</div>
-                                    </div>
-                                    <div className="col-md-3 colBorder">
-                                        <div className="postImage" style={{ backgroundImage: "url(../assets/images/reviewImg3.png)" }}></div>
-                                        <h2>Zammy Migdal: Creator of Wall Sculpture</h2>
-                                        <div className="idNumber">An eye for art: The new and the notable at fall's premier arts event</div>
-                                    </div>
-                                    <div className="col-md-3 colBorder">
-                                        <div className="postImage" style={{ backgroundImage: "url(../assets/images/reviewImg4.png)" }}></div>
-                                        <h2>Artist Raul Conti: Shares Creative Passion</h2>
-                                        <div className="idNumber">Its political views notwithstanding, the Berlin-based website New Models is something like a Drudge Report for the art, tech, and culture sector.</div>
-                                    </div>
-                                    <div className="col-md-3 colBorder">
-                                        <div className="postImage" style={{ backgroundImage: "url(../assets/images/reviewImg1.png)" }}></div>
-                                        <h2>Sculptor Christian Lapie: Beauty from Charred Ashes</h2>
-                                        <div className="idNumber">Kanye West Wants to Teach Art Courses in Chicago</div>
-                                    </div>
-                                    <div className="col-md-3 colBorder">
-                                        <div className="postImage" style={{ backgroundImage: "url(../assets/images/reviewImg2.png)" }}></div>
-                                        <h2>Artist Humberto Castro: Master of Transformation</h2>
-                                        <div className="idNumber">Two New Art Festivals Boost the American Midwest's Culture Quotient</div>
-                                    </div>
-                                    <div className="col-md-3 colBorder">
-                                        <div className="postImage" style={{ backgroundImage: "url(../assets/images/reviewImg3.png)" }}></div>
-                                        <h2>Zammy Migdal: Creator of Wall Sculpture</h2>
-                                        <div className="idNumber">An eye for art: The new and the notable at fall's premier arts event</div>
-                                    </div>
-                                    <div className="col-md-3 colBorder">
-                                        <div className="postImage" style={{ backgroundImage: "url(../assets/images/reviewImg4.png)" }}></div>
-                                        <h2>Artist Raul Conti: Shares Creative Passion</h2>
-                                        <div className="idNumber">Its political views notwithstanding, the Berlin-based website New Models is something like a Drudge Report for the art, tech, and culture sector.</div>
-                                    </div>
-                                </ul>
-                            </div>
+                            <ul className="owl-carousel owlReset ReviewThreeCol">
+                                <li><div className="col-md-3 colBorder">
+                                    <div className="postImage" style={{ backgroundImage: `url(../assets/images/apbReviewImg1.png)` }}></div>
+                                    <h2>Going Wireless With Your Headphones</h2>
+                                    <div className="idNumber">New season of Red Rose art shows begin Sept. 15-16 in West Sedona</div>
+                                </div></li>
+                                <li><div className="col-md-3 colBorder">
+                                    <div className="postImage" style={{ backgroundImage: `url(../assets/images/apbReviewImg2.png)` }}></div>
+                                    <h2>Lasik Surgery Frequently Asked Questions</h2>
+                                    <div className="idNumber">6th annual Frida Fest brings local, international art and poetry to McAllen</div>
+                                </div></li>
+                                <li><div className="col-md-3 colBorder">
+                                    <div className="postImage" style={{ backgroundImage: `url(../assets/images/apbReviewImg3.png)` }}></div>
+                                    <h2>Cutting Prescription Drug Costs</h2>
+                                    <div className="idNumber">Located underneath a 1930's shopping center and the adjacent Lasipalatsi Square in Helsinki, the Amos Rex Museum provides about 23,500</div>
+                                </div></li>
+                                <li><div className="col-md-3 colBorder">
+                                    <div className="postImage" style={{ backgroundImage: `url(../assets/images/apbReviewImg4.png)` }}></div>
+                                    <h2>The Different Types Of Laser Eye Surgery</h2>
+                                    <div className="idNumber">Incoming first-year student Julian Wessell-Meadows shows a painting to Camille Andersen during a button-making session at the Arts@Tufts</div>
+                                </div></li>
+                                <li><div className="col-md-3 colBorder">
+                                    <div className="postImage" style={{ backgroundImage: `url(../assets/images/apbReviewImg1.png)` }}></div>
+                                    <h2>Going Wireless With Your Headphones</h2>
+                                    <div className="idNumber">New season of Red Rose art shows begin Sept. 15-16 in West Sedona</div>
+                                </div></li>
+                                <li><div className="col-md-3 colBorder">
+                                    <div className="postImage" style={{ backgroundImage: `url(../assets/images/apbReviewImg2.png)` }}></div>
+                                    <h2>Lasik Surgery Frequently Asked Questions</h2>
+                                    <div className="idNumber">6th annual Frida Fest brings local, international art and poetry to McAllen</div>
+                                </div></li>
+                                <li><div className="col-md-3 colBorder">
+                                    <div className="postImage" style={{ backgroundImage: `url(../assets/images/apbReviewImg3.png)` }}></div>
+                                    <h2>Cutting Prescription Drug Costs</h2>
+                                    <div className="idNumber">Located underneath a 1930's shopping center and the adjacent Lasipalatsi Square in Helsinki, the Amos Rex Museum provides about 23,500</div>
+                                </div></li>
+                                <li><div className="col-md-3 colBorder">
+                                    <div className="postImage" style={{ backgroundImage: `url(../assets/images/apbReviewImg4.png)` }}></div>
+                                    <h2>The Different Types Of Laser Eye Surgery</h2>
+                                    <div className="idNumber">Incoming first-year student Julian Wessell-Meadows shows a painting to Camille Andersen during a button-making session at the Arts@Tufts</div>
+                                </div></li>
+                            </ul>
+
                         </div>
                     </div>
                 </div>
