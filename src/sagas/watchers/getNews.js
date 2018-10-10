@@ -4,8 +4,8 @@ import { GET_NEWS_SAGA } from '../../constants';
 import { setNews } from '../../actions';
 import { getNews } from '../../lib/api';
 
-function* workerGetNewsSaga() {
-  const news = yield call(getNews);
+function* workerGetNewsSaga(action) {
+  const news = yield call(getNews, action.params);
   yield put(setNews(news));
 }
 

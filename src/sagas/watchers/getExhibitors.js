@@ -4,8 +4,8 @@ import { GET_EXHIBITORS_SAGA } from '../../constants';
 import { setExhibitors } from '../../actions';
 import { getExhibitors } from '../../lib/api';
 
-function* workerGetExhibitorsSaga() {
-  const exhibitors = yield call(getExhibitors);
+function* workerGetExhibitorsSaga(action) {
+  const exhibitors = yield call(getExhibitors, action.params);
   yield put(setExhibitors(exhibitors));
 }
 

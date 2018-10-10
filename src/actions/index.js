@@ -25,9 +25,10 @@ export function setNews(news) {
   }
 }
 
-export function getNewsSaga() {
+export function getNewsSaga(params) {
   return {
-    type: GET_NEWS_SAGA
+    type: GET_NEWS_SAGA,
+    params: params
   }
 }
 
@@ -52,9 +53,10 @@ export function setExhibitors(exhibitors) {
   }
 }
 
-export function getExhibitorsSaga() {
+export function getExhibitorsSaga(params) {
   return {
-    type: GET_EXHIBITORS_SAGA
+    type: GET_EXHIBITORS_SAGA,
+    params: params
   }
 }
 
@@ -65,9 +67,10 @@ export function setArtists(artists) {
   }
 }
 
-export function getArtistsSaga() {
+export function getArtistsSaga(params) {
   return {
-    type: GET_ARTISTS_SAGA
+    type: GET_ARTISTS_SAGA,
+    params: params
   }
 }
 

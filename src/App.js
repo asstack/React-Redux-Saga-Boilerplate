@@ -6,7 +6,8 @@ import { Route } from 'react-router-dom';
 
 import store, { history } from './store';
 
-import Home from './screens/Home/abr';
+import HomeAbr from './screens/Home/abr';
+import HomeApb from './screens/Home/apb';
 
 import './App.css';
 
@@ -15,7 +16,10 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-            <Route exact path="/art-boca-raton" component={Home} />
+          <div>
+            <Route exact path="/art-boca-raton" component={HomeAbr} />
+            <Route exact path="/art-palm-beach" component={HomeApb} />
+          </div>
         </ConnectedRouter>
       </Provider>
     );

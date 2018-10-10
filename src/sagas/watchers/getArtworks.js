@@ -4,8 +4,8 @@ import { GET_ARTWORKS_SAGA } from '../../constants';
 import { setArtworks } from '../../actions';
 import { getArtworks } from '../../lib/api';
 
-function* workerGetArtworksSaga() {
-  const artworks = yield call(getArtworks);
+function* workerGetArtworksSaga(action) {
+  const artworks = yield call(getArtworks, action.params);
   yield put(setArtworks(artworks));
 }
 

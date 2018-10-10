@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { getNewsSaga } from '../../../actions';
+import { TAG_APB } from '../../../appConstants';
 
 
 const $ = window.$;
-
 
 class NewsSection extends Component {
 
@@ -48,12 +48,12 @@ class NewsSection extends Component {
                         <div className="row justify-content-center">
                             <div className=" col-md-6">
                                 <div className="eventHeader">
-                                    <h2 className="eventHeading">ABR<span>News</span></h2>
+                                    <h2 className="eventHeading">APB<span>News</span></h2>
                                 </div>
                             </div>
                             <div className=" col-md-6 text-right">
-                                <div className="slideBlogNavRight "><a className="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span className="navDivider"></span><a className="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a></div>
-                                <ul className="tagsEvents">
+                                <div className="slideBlogNavRight "><a className="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span className="navDivider"></span><a className="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a> </div>
+                                <ul className="tagsEvents apbTagEvents">
                                     <li className="active"><a href="#">Last</a></li>
                                     <li><a href="#">Popular</a></li>
                                     <li><a href="#">Old</a></li>
@@ -63,7 +63,7 @@ class NewsSection extends Component {
                     </div>
                 </div>
                 <div className="eventsList">
-                    <div className="container">
+                    <div className="container ">
                         <div className="row justify-content-center">
                             <div className="col-md-12">
                                 <ul className="owl-carousel owlReset sliderNews">
@@ -74,13 +74,11 @@ class NewsSection extends Component {
                                                 categories_array.push(element.title);
                                             });
                                             return (
-                                                <li key={index}>
-                                                    <div className={`col-md-3 ${index === 1 ? 'bgRed' : index === 3 && 'bgGolden'}`} key={index}>
-                                                        <h3 className="postTags">{categories_array.join(', ')}</h3>
-                                                        <div className="postImage" style={{ backgroundImage: `url(${ photos && `http://142.93.202.48${photos.url})`}` }}></div>
-                                                        <h2>{title}</h2>
-                                                    </div>
-                                                </li>
+                                                <div key={index} className={`col-md-3 ${index === 1 ? 'bgRed bgGoldenDark' : index === 3 && 'bgGolden bgGreyDark'}`} key={index}>
+                                                    <h3 className="postTags">{categories_array.join(', ')}</h3>
+                                                    <div className="postImage" style={{ backgroundImage: `url(${photos && `http://142.93.202.48${photos.url})`}` }}></div>
+                                                    <h2>{title}</h2>
+                                                </div>
                                             )
                                         })
                                     }
@@ -96,7 +94,7 @@ class NewsSection extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         );
     }
 }
@@ -107,7 +105,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     getNewsSaga: () =>
-        dispatch(getNewsSaga())
+        dispatch(getNewsSaga({ tags: TAG_APB }))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewsSection);

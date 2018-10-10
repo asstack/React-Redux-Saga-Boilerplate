@@ -1,7 +1,7 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
 
 import { GET_EVENTS_SAGA } from '../../constants';
-import { setEvents, getEventsSaga } from '../../actions';
+import { setEvents } from '../../actions';
 import { getEvents } from '../../lib/api';
 
 function* workerGetEventsSaga(action) {
