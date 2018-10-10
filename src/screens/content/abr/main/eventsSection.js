@@ -12,15 +12,15 @@ class EventsSection extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            artists: []
-        };
+        // this.state = {
+        //     artists: []
+        // };
 
-        store.subscribe(() => {
-            this.setState({
-                artists: store.getState().artistsReducer.artists
-            });
-        });
+        // store.subscribe(() => {
+        //     this.setState({
+        //         artists: store.getState().artistsReducer.artists
+        //     });
+        // });
     }
 
     componentDidMount() {
@@ -54,7 +54,7 @@ class EventsSection extends Component {
 
     render() {
         const { events } = this.props;
-        const { artists } = this.state;
+        // const { artists } = this.state;
         return (
             <div className="sectionEvents" >
                 <div className="eventHeaderTop borderTopBt">

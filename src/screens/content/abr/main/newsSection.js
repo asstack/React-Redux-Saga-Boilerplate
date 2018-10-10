@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 import { getNewsSaga } from '../../../../actions';
 
@@ -77,7 +78,7 @@ class NewsSection extends Component {
                                                 <li key={index}>
                                                     <div className={`col-md-3 ${index === 1 ? 'bgRed' : index === 3 && 'bgGolden'}`} key={index}>
                                                         <h3 className="postTags">{categories_array.join(', ')}</h3>
-                                                        <div className="postImage" style={{ backgroundImage: `url(${ photos && `http://142.93.202.48${photos.url})`}` }}></div>
+                                                        <div className="postImage" style={{ backgroundImage: `url(${photos && `http://142.93.202.48${photos.url})`}` }}></div>
                                                         <h2>{title}</h2>
                                                     </div>
                                                 </li>
@@ -92,7 +93,10 @@ class NewsSection extends Component {
                 <div className="eventSeeMore">
                     <div className="container ">
                         <div className="row justify-content-center">
-                            <div className=" col-lg-12 seeMoreBtnCont"> <a href="#" className="seemoreBtn">See All</a> </div>
+                            <div className=" col-lg-12 seeMoreBtnCont">
+                                {/* <a href="#" className="seemoreBtn">See All</a> */}
+                                <Link to='/art-boca-raton/news' className="seemoreBtn">See All</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
