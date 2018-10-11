@@ -95,7 +95,7 @@ class NewsSection extends Component {
                         <div className="row justify-content-center">
                             <div className=" col-lg-12 seeMoreBtnCont">
                                 {/* <a href="#" className="seemoreBtn">See All</a> */}
-                                <Link to='/art-boca-raton/news' className="seemoreBtn">See All</Link>
+                                <Link to="/art-boca-raton/news" className="seemoreBtn">See All</Link>
                             </div>
                         </div>
                     </div>

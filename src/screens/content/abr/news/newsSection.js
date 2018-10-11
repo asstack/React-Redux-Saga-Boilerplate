@@ -37,6 +37,12 @@ class NewsSection extends Component {
                 }
             }
         });
+        $('.slideLeftNav').on("click", function () {
+            $('.topSliderMain').find('.prevSlide').trigger("click");
+        });
+        $('.slideRightNav').on("click", function () {
+            $('.topSliderMain').find('.NextSlide').trigger("click");
+        });
     }
 
     render() {

@@ -1,6 +1,37 @@
 import React, { Component } from 'react';
 
+
+const $ = window.$;
+
 class MainGallery extends Component {
+
+    componentDidMount() {
+        $('.mainBanner').owlCarousel({
+            loop: true,
+            margin: 30,
+            nav: true,
+            nav: true,
+            slideBy: 1,
+            navText: ['<a class="prevSlide" href="#"></a>', '<a class="NextSlide" href="#"></a>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        });
+        $('.slideLeftNav').on("click", function () {
+            $('.topSliderMain').find('.prevSlide').trigger("click");
+        });
+        $('.slideRightNav').on("click", function () {
+            $('.topSliderMain').find('.NextSlide').trigger("click");
+        });
+    }
 
     renderSliderTop = () => (
         <div key={1} className="sliderTopSec">

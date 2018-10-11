@@ -1,7 +1,32 @@
 import React, { Component } from 'react';
 
 
+const $ = window.$;
+
 class BannerSection extends Component {
+
+    componentDidMount() {
+        $('.abrNewsMainSlider').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            nav: true,
+            slideBy: 1,
+            navText: ['<a class="prevSlide" href="#"></a>', '<a class="NextSlide" href="#"></a>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        });
+    }
+
     render() {
         return (
             <div className="topSliderMain apbeMainBanner newsBanner">
