@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { getEventsSaga } from '../../../../actions';
 import store from '../../../../store';
-import { TAG_ABR } from '../../../../appConstants';
+import { TAG_APB } from '../../../../appConstants';
 
 
 const $ = window.$;
@@ -13,15 +12,15 @@ class EventsSection extends Component {
     constructor(props) {
         super(props);
 
-        // this.state = {
-        //     artists: []
-        // };
+        this.state = {
+            artists: []
+        };
 
-        // store.subscribe(() => {
-        //     this.setState({
-        //         artists: store.getState().artistsReducer.artists
-        //     });
-        // });
+        store.subscribe(() => {
+            this.setState({
+                artists: store.getState().artistsReducer.artists
+            });
+        });
     }
 
     componentDidMount() {
@@ -55,7 +54,7 @@ class EventsSection extends Component {
 
     render() {
         const { events } = this.props;
-        // const { artists } = this.state;
+        const { artists } = this.state;
         return (
             <div className="sectionEvents" >
                 <div className="eventHeaderTop borderTopBt">
@@ -63,12 +62,12 @@ class EventsSection extends Component {
                         <div className="row justify-content-center">
                             <div className=" col-md-6">
                                 <div className="eventHeader">
-                                    <h2 className="eventHeading">ABR<span>Events</span></h2>
+                                    <h2 className="eventHeading">APB<span>Events</span></h2>
                                 </div>
                             </div>
                             <div className=" col-md-6 text-right">
-                                <div className="slideBlogNavRight "><a className="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span className="navDivider"></span><a className="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a></div>
-                                <ul className="tagsEvents">
+                                <div className="slideBlogNavRight "><a className="BlogSlideNav prevBlogSlide" href="javascript:void(0);"></a><span className="navDivider"></span><a className="BlogSlideNav NextBlogSlide" href="javascript:void(0);"></a> </div>
+                                <ul className="tagsEvents apbTagEvents">
                                     <li className="active"><a href="#">Last</a></li>
                                     <li><a href="#">Popular</a></li>
                                     <li><a href="#">Old</a></li>
@@ -100,34 +99,31 @@ class EventsSection extends Component {
                                             </li>
                                         ))
                                     }
+
                                 </ul>
                             </div>
                             <div className="col-md-3 colBorder">
                                 <div className="events">
                                     <div className="daysTimeEve">Days & Times</div>
-                                    <h2 className="eventName">Vernissage</h2>
+                                    <h2 className="eventName">Collectors’ First View</h2>
                                     <div className="spacerBorder"><span className="borderBtSp"></span></div>
-                                    <p><span className="whiteTextEve">Thursday</span><br />
-                                        <span className="whiteTextEve">March 14</span> – 6 PM – 8 PM</p>
+                                    <p><span className="whiteTextEve">Wednesday</span><br />
+                                        <span className="whiteTextEve">January 16</span> – 6 PM – 10 PM</p>
                                     <div className="spacerBorder"><span className="bordeGeyBteve"></span></div>
                                     <p>Collectors Preview<br />
-                                        March 14  8 -10 PM, By Invitation Only</p>
+                                        January 16 – 6 PM – 10 PM</p>
                                     <div className="spacerBorder bigGapTpBt"><span className="bordeGeyBteve"></span></div>
-                                    <p>Vernissage admission by separate ticket</p>
-                                    <p className="redText">$50 per person </p>
                                     <div className="buttonBottomBuy"><a href="#" className="buttonBuy">Byu Tickets</a></div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
                 <div className="eventSeeMore">
                     <div className="container ">
                         <div className="row justify-content-center">
-                            <div className=" col-lg-12 seeMoreBtnCont">
-                                {/* <a href="#" className="seemoreBtn">See More</a> */}
-                                <Link to="/art-boca-raton/events" className="seemoreBtn">See More</Link>
-                            </div>
+                            <div className=" col-lg-12 seeMoreBtnCont"> <a href="#" className="seemoreBtn">See More</a> </div>
                         </div>
                     </div>
                 </div>
@@ -142,7 +138,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     getEventsSaga: () => {
-        dispatch(getEventsSaga())
+        dispatch(getEventsSaga({ tags: TAG_APB }))
     }
 })
 

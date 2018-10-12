@@ -18,7 +18,7 @@ export default class App extends Component {
         <ConnectedRouter history={history}>
           <div>
             <Route path="/art-boca-raton" component={HomeAbr} />
-            <Route exact path="/art-palm-beach" component={HomeApb} />
+            <Route path="/art-palm-beach" component={HomeApb} />
           </div>
         </ConnectedRouter>
       </Provider>

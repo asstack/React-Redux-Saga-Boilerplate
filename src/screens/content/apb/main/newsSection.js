@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
-import { getExhibitorsSaga } from '../../../actions';
-import { TAG_APB } from '../../../appConstants';
+import { getNewsSaga } from '../../../../actions';
+import { TAG_APB } from '../../../../appConstants';
 
 
 const $ = window.$;
 
-class ExhibitorsSection extends Component {
+class NewsSection extends Component {
 
     componentDidMount() {
-        this.props.getExhibitorsSaga();
+        this.props.getNewsSaga();
     }
 
     componentDidUpdate() {
-        $('.ExhibSlider').trigger('destroy.owl.carousel');
-        $('.ExhibSlider').find('.owl-stage-outer').children().unwrap();
-        $('.ExhibSlider').removeClass("owl-center owl-loaded owl-text-select-on");
+        $('.sliderNews').trigger('destroy.owl.carousel');
+        $('.sliderNews').find('.owl-stage-outer').children().unwrap();
+        $('.sliderNews').removeClass("owl-center owl-loaded owl-text-select-on");
 
-        $('.ExhibSlider').owlCarousel({
+        $('.sliderNews').owlCarousel({
             loop: true,
-            margin: 0,
+            margin: 30,
             nav: true,
             nav: true,
-            slideBy: 3,
+            slideBy: 4,
             navText: ['<a class="prevSlide" href="#"></a>', '<a class="NextSlide" href="#"></a>'],
             responsive: {
                 0: {
@@ -33,22 +34,22 @@ class ExhibitorsSection extends Component {
                     items: 3
                 },
                 1000: {
-                    items: 3
+                    items: 4
                 }
             }
         });
     }
 
     render() {
-        const { exhibitors } = this.props;
+        const { news } = this.props;
         return (
-            <div className="sectionEvents ExhibSection">
+            <div className="sectionEvents NewsSection">
                 <div className="eventHeaderTop borderTopBt">
                     <div className="container ">
                         <div className="row justify-content-center">
                             <div className=" col-md-6">
                                 <div className="eventHeader">
-                                    <h2 className="eventHeading">APB<span>Exhibitors</span></h2>
+                                    <h2 className="eventHeading">APB<span>News</span></h2>
                                 </div>
                             </div>
                             <div className=" col-md-6 text-right">
@@ -65,30 +66,24 @@ class ExhibitorsSection extends Component {
                 <div className="eventsList">
                     <div className="container ">
                         <div className="row justify-content-center">
-                            <div className="col-md-9">
-                                <ul className="owl-carousel owlReset ExhibSlider">
+                            <div className="col-md-12">
+                                <ul className="owl-carousel owlReset sliderNews">
                                     {
-                                        exhibitors.map(({ title, location, photos }, index) => (
-                                            <li key={index}>
-                                                <div className="col-md-3 colBorder">
-                                                    <div className="postImage" style={{ backgroundImage: `url(http://142.93.202.48${photos.url})` }}></div>
+                                        news.map(({ title, photos, categories }, index) => {
+                                            let categories_array = [];
+                                            categories.forEach(element => {
+                                                categories_array.push(element.title);
+                                            });
+                                            return (
+                                                <div key={index} className={`col-md-3 ${index === 1 ? 'bgRed bgGoldenDark' : index === 3 && 'bgGolden bgGreyDark'}`} key={index}>
+                                                    <h3 className="postTags">{categories_array.join(', ')}</h3>
+                                                    <div className="postImage" style={{ backgroundImage: `url(${photos && `http://142.93.202.48${photos.url})`}` }}></div>
                                                     <h2>{title}</h2>
-                                                    <div className="idNumber">{location}</div>
                                                 </div>
-                                            </li>
-                                        ))
+                                            )
+                                        })
                                     }
                                 </ul>
-                            </div>
-                            <div className="col-md-3 colBorder">
-                                <div className="events exibtEvent abpExbBg">
-                                    <div className="daysTimeEve">Art Palm Beach</div>
-                                    <h2 className="eventName">Exibitors Call</h2>
-                                    <div className="spacerBorder"><span className="borderBtSp"></span></div>
-                                    <p><span className="whiteTextEve">Thursday</span><br />
-                                        March 14 – 6 PM – 8 PM</p>
-                                    <div className="buttonBottomBuy"><a href="#" className="buttonBuy">To Exibit</a></div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -96,23 +91,25 @@ class ExhibitorsSection extends Component {
                 <div className="eventSeeMore">
                     <div className="container ">
                         <div className="row justify-content-center">
-                            <div className=" col-lg-12 seeMoreBtnCont"> <a href="#" className="seemoreBtn">See All</a> </div>
+                            <div className=" col-lg-12 seeMoreBtnCont">
+                                {/* <a href="#" className="seemoreBtn">See All</a> */}
+                                <Link to="/art-palm-beach/news" className="seemoreBtn">See All</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         );
     }
 }
 
 const mapStateToProps = state => ({
-    exhibitors: state.exhibitorsReducer.exhibitors
+    news: state.newsReducer.news
 });
 
 const mapDispatchToProps = dispatch => ({
-    getExhibitorsSaga: () => {
-        dispatch(getExhibitorsSaga({ tags: TAG_APB }))
-    }
-})
+    getNewsSaga: () =>
+        dispatch(getNewsSaga({ tags: TAG_APB }))
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExhibitorsSection);
+export default connect(mapStateToProps, mapDispatchToProps)(NewsSection);

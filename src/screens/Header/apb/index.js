@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+
 
 class Header extends Component {
 
@@ -13,7 +15,8 @@ class Header extends Component {
                                 <div className="leftPart">
                                     <a href="#" className="menuIcon navbar-toggler" data-toggle="collapse" data-target="#worldNav" aria-controls="worldNav" aria-expanded="false" aria-label="Toggle navigation"></a>
                                     <div className="breaCrumb">
-                                        <a className="navbar-brand" href="index.html">NLF</a>
+                                        {/* <a className="navbar-brand" href="index.html">NLF</a> */}
+                                        <Link to="/art-palm-beach" className="navbar-brand">NLF</Link>
                                         <span className="divider">/</span>
                                         <span className="pageName">Art Palm Beach</span>
                                     </div>

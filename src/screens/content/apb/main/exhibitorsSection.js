@@ -1,40 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getEventsSaga } from '../../../actions';
-import store from '../../../store';
-import { TAG_APB } from '../../../appConstants';
+import { getExhibitorsSaga } from '../../../../actions';
+import { TAG_APB } from '../../../../appConstants';
 
 
 const $ = window.$;
 
-class EventsSection extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            artists: []
-        };
-
-        store.subscribe(() => {
-            this.setState({
-                artists: store.getState().artistsReducer.artists
-            });
-        });
-    }
+class ExhibitorsSection extends Component {
 
     componentDidMount() {
-        this.props.getEventsSaga();
+        this.props.getExhibitorsSaga();
     }
 
     componentDidUpdate() {
-        $('.AbrEventSlider').trigger('destroy.owl.carousel');
-        $('.AbrEventSlider').find('.owl-stage-outer').children().unwrap();
-        $('.AbrEventSlider').removeClass("owl-center owl-loaded owl-text-select-on");
+        $('.ExhibSlider').trigger('destroy.owl.carousel');
+        $('.ExhibSlider').find('.owl-stage-outer').children().unwrap();
+        $('.ExhibSlider').removeClass("owl-center owl-loaded owl-text-select-on");
 
-        $('.AbrEventSlider').owlCarousel({
+        $('.ExhibSlider').owlCarousel({
             loop: true,
             margin: 0,
+            nav: true,
             nav: true,
             slideBy: 3,
             navText: ['<a class="prevSlide" href="#"></a>', '<a class="NextSlide" href="#"></a>'],
@@ -53,16 +40,15 @@ class EventsSection extends Component {
     }
 
     render() {
-        const { events } = this.props;
-        const { artists } = this.state;
+        const { exhibitors } = this.props;
         return (
-            <div className="sectionEvents" >
+            <div className="sectionEvents ExhibSection">
                 <div className="eventHeaderTop borderTopBt">
                     <div className="container ">
                         <div className="row justify-content-center">
                             <div className=" col-md-6">
                                 <div className="eventHeader">
-                                    <h2 className="eventHeading">APB<span>Events</span></h2>
+                                    <h2 className="eventHeading">APB<span>Exhibitors</span></h2>
                                 </div>
                             </div>
                             <div className=" col-md-6 text-right">
@@ -80,66 +66,53 @@ class EventsSection extends Component {
                     <div className="container ">
                         <div className="row justify-content-center">
                             <div className="col-md-9">
-                                <ul className="owl-carousel owlReset AbrEventSlider">
+                                <ul className="owl-carousel owlReset ExhibSlider">
                                     {
-                                        events.map(({ title, description, photos }, index) => (
+                                        exhibitors.map(({ title, location, photos }, index) => (
                                             <li key={index}>
                                                 <div className="col-md-3 colBorder">
-                                                    <h3 className="postTags">Work</h3>
-                                                    <div className="postImage" style={{ backgroundImage: `url(${photos && `http://142.93.202.48${photos.url})`}` }}></div>
+                                                    <div className="postImage" style={{ backgroundImage: `url(http://142.93.202.48${photos.url})` }}></div>
                                                     <h2>{title}</h2>
-                                                    <div className="dateTimePost">
-                                                        <p>Date & Time</p>
-                                                        <p><strong>15-18 March  2019, 2-3 pm</strong></p>
-                                                    </div>
-                                                    <div className="postDisc">
-                                                        <p>{description}</p>
-                                                    </div>
+                                                    <div className="idNumber">{location}</div>
                                                 </div>
                                             </li>
                                         ))
                                     }
-
                                 </ul>
                             </div>
                             <div className="col-md-3 colBorder">
-                                <div className="events">
-                                    <div className="daysTimeEve">Days & Times</div>
-                                    <h2 className="eventName">Collectors’ First View</h2>
+                                <div className="events exibtEvent abpExbBg">
+                                    <div className="daysTimeEve">Art Palm Beach</div>
+                                    <h2 className="eventName">Exibitors Call</h2>
                                     <div className="spacerBorder"><span className="borderBtSp"></span></div>
-                                    <p><span className="whiteTextEve">Wednesday</span><br />
-                                        <span className="whiteTextEve">January 16</span> – 6 PM – 10 PM</p>
-                                    <div className="spacerBorder"><span className="bordeGeyBteve"></span></div>
-                                    <p>Collectors Preview<br />
-                                        January 16 – 6 PM – 10 PM</p>
-                                    <div className="spacerBorder bigGapTpBt"><span className="bordeGeyBteve"></span></div>
-                                    <div className="buttonBottomBuy"><a href="#" className="buttonBuy">Byu Tickets</a></div>
+                                    <p><span className="whiteTextEve">Thursday</span><br />
+                                        March 14 – 6 PM – 8 PM</p>
+                                    <div className="buttonBottomBuy"><a href="#" className="buttonBuy">To Exibit</a></div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
                 <div className="eventSeeMore">
                     <div className="container ">
                         <div className="row justify-content-center">
-                            <div className=" col-lg-12 seeMoreBtnCont"> <a href="#" className="seemoreBtn">See More</a> </div>
+                            <div className=" col-lg-12 seeMoreBtnCont"> <a href="#" className="seemoreBtn">See All</a> </div>
                         </div>
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 
 const mapStateToProps = state => ({
-    events: state.eventsReducer.events
+    exhibitors: state.exhibitorsReducer.exhibitors
 });
 
 const mapDispatchToProps = dispatch => ({
-    getEventsSaga: () => {
-        dispatch(getEventsSaga({ tags: TAG_APB }))
+    getExhibitorsSaga: () => {
+        dispatch(getExhibitorsSaga({ tags: TAG_APB }))
     }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(EventsSection);
+export default connect(mapStateToProps, mapDispatchToProps)(ExhibitorsSection);

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getArtworksSaga } from '../../../actions';
-import { TAG_APB } from '../../../appConstants';
+import { getArtworksSaga } from '../../../../actions';
+import { TAG_APB } from '../../../../appConstants';
 
 
 const $ = window.$;

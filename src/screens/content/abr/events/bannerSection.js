@@ -35,50 +35,74 @@ class BannerSection extends Component {
 
     render() {
         return (
-            <div className="topSliderMain apbeMainBanner newsBanner">
+            <div className="topSliderMain apbeMainBanner">
                 <ul className="owl-carousel owlReset abrNewsMainSlider">
                     <li>
                         <div className="container">
                             <div className="row justify-content-center">
+
                                 <div className="col-md-5">
                                     <div className="row">
+                                        <div className=" col-md-8">
+                                            <div className="ticcetTxt">
+                                                <div className="topHdrText"><span className="topGreyTxt">Ticcet </span></div>
+                                                <span>$15 online </span> <span className="topDarkText">- $20 at door</span> </div>
+                                        </div>
+                                        <div className=" col-md-4">
+                                            <div className="ticcetTxt">
+                                                <div className="topHdrText"><span className="topGreyTxt">Time: </span></div>
+                                                <span className="topDarkText">17 Mar  3 - 4 pm</span> </div>
+                                        </div>
+                                    </div>
+                                    <div className="row">
                                         <div className=" col-md-12">
-                                            <div className="sliderWhiteText">16 Jan 2018</div>
-                                            <div className="blackTextSlide">Latin American Art Magazine “ArtPalmBeach 2018”</div>
-                                            <div className="greyTextSlide">The extraordinary artistic legacy of Jose Bedia
-                                              goes beyond the contributions of the Cuban and
-              Latin American modernist vanguard…</div>
+                                            <div className="sliderWhiteText">Abr Lecture</div>
+                                            <div className="blackTextSlide">Presentation & Book Signing with Photographer David Drebin</div>
                                             <div className="readMoreBtnCont"> <a href="#" className="readMoreNewBtn"><span className="btnCircleRead"><i className="fa fa-long-arrow-right" aria-hidden="true"></i></span> <span className="readText">Read More</span></a> </div>
+
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="col-lg-7"> <img src="../assets/images/newsBanner.jpg" alt="" /> </div>
+                                <div className="col-lg-7"> <img src="../assets/images/apbeSlideImg.jpg" alt="" /></div>
+
                             </div>
                         </div>
                     </li>
                     <li>
                         <div className="container">
                             <div className="row justify-content-center">
+
                                 <div className="col-md-5">
                                     <div className="row">
+                                        <div className=" col-md-8">
+                                            <div className="ticcetTxt">
+                                                <div className="topHdrText"><span className="topGreyTxt">Ticcet </span></div>
+                                                <span>$15 online </span> <span className="topDarkText">- $20 at door</span> </div>
+                                        </div>
+                                        <div className=" col-md-4">
+                                            <div className="ticcetTxt">
+                                                <div className="topHdrText"><span className="topGreyTxt">Time: </span></div>
+                                                <span className="topDarkText">17 Mar  3 - 4 pm</span> </div>
+                                        </div>
+                                    </div>
+                                    <div className="row">
                                         <div className=" col-md-12">
-                                            <div className="sliderWhiteText">16 Jan 2018</div>
-                                            <div className="blackTextSlide">Latin American Art Magazine “ArtPalmBeach 2018”</div>
-                                            <div className="greyTextSlide">The extraordinary artistic legacy of Jose Bedia
-                                              goes beyond the contributions of the Cuban and
-              Latin American modernist vanguard…</div>
+                                            <div className="sliderWhiteText">Abr Lecture</div>
+                                            <div className="blackTextSlide">Presentation & Book Signing with Photographer David Drebin</div>
                                             <div className="readMoreBtnCont"> <a href="#" className="readMoreNewBtn"><span className="btnCircleRead"><i className="fa fa-long-arrow-right" aria-hidden="true"></i></span> <span className="readText">Read More</span></a> </div>
+
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="col-lg-7"> <img src="../assets/images/newsBanner.jpg" alt="" /> </div>
+                                <div className="col-lg-7"> <img src="../assets/images/apbeSlideImg.jpg" alt="" /></div>
+
                             </div>
                         </div>
                     </li>
-                </ul>
 
+                </ul>
                 <div className="container">
 
                     <div className="row">
