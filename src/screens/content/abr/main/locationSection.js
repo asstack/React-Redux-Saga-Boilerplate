@@ -35,7 +35,7 @@ class LocationSection extends Component {
                                 <div className="contactBuy"><a href="#" className="buyTickets">Buy Tickets</a></div>
                             </div>
                             <div className=" col-md-6 colBorder">
-                                <div className="mapSection"> <img src="../assets/images/mapImg.png" alt="map" /></div>
+                                <div className="mapSection"> <img src="../../assets/images/mapImg.png" alt="map" /></div>
                             </div>
                             <div className="col-md-3 colBorder">
                                 <div className="idNumber">Location</div>
